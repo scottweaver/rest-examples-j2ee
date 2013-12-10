@@ -12,7 +12,6 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class Application extends ResourceConfig {
 
     public Application() {
-        super(JacksonFeature.class,  DefaultErrorHandler.class);
-        //packages("com.siemens.pl.it.topwatch.resource");
+        super(JacksonFeature.class,  JacksonObjectMapper.class, DefaultErrorHandler.class);
     }
 }

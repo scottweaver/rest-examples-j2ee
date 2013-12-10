@@ -38,6 +38,14 @@ public class QuoteResource {
     ArrayList<Quote> quotes = new ArrayList<Quote>();
     quotes.add(newQuote("10000", "1", "New quote 1",
             newQuoteItem("A001", 1, 200.00, new Date())));
+
+    quotes.add(newQuote("20000", "1", "New quote 2",
+            newQuoteItem("A002", 5, 500.00, new Date())));
+
+    quotes.add(newQuote("30000", "1", "New quote 3",
+            newQuoteItem("UG10100", 1, 700.00, new Date()),
+            newQuoteItem("A001", 1, 200.00, new Date())
+            ));
     return quotes;
 
   }
