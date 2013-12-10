@@ -55,10 +55,15 @@
             <!-- artifactId>jersey-container-servlet</artifactId -->
         </dependency>
         <!--&lt;!&ndash; uncomment this to get JSON support-->
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-moxy</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.glassfish.jersey.media</groupId>-->
+            <!--<artifactId>jersey-media-moxy</artifactId>-->
+        <!--</dependency>-->
+      <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-jackson</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
 
     </dependencies>
     <properties>
