@@ -11,7 +11,6 @@ public class QuoteItem {
 
   private String sku;
   private int quantity;
-  private double listPrice;
   private double licenseListPrice;
   private Date mesExpirationDate;
 
@@ -21,14 +20,6 @@ public class QuoteItem {
 
   public void setLicenseListPrice(double licenseListPrice) {
     this.licenseListPrice = licenseListPrice;
-  }
-
-  public double getListPrice() {
-    return listPrice;
-  }
-
-  public void setListPrice(double listPrice) {
-    this.listPrice = listPrice;
   }
 
   public Date getMesExpirationDate() {
