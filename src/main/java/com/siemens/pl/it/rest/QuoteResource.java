@@ -4,6 +4,8 @@ package com.siemens.pl.it.rest;/**
  * Time: 10:43 AM 
  */
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
 import com.siemens.pl.it.rest.models.Quote;
 import com.siemens.pl.it.rest.models.QuoteItem;
 
@@ -30,8 +32,22 @@ public class QuoteResource {
   @GET
   @Path("/{quoteId}/{revision}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Quote quote(@PathParam("quoteId") String quoteId, @PathParam("revision") String revision) {
-    return new Quote();
+  public Quote quote(@PathParam("quoteId") final String quoteId,
+                     @PathParam("revision") final String revision) {
+    Collection<Quote> quotesFound =  Collections2.filter(getAllQuotes(),  new Predicate<Quote>() {
+      @Override
+      public boolean apply(Quote quote) {
+        return quote.getQuoteId().equals(quoteId) && quote.getRevision().equals(revision);
+      }
+    });
+
+    if(!quotesFound.isEmpty()) {
+      return quotesFound.iterator().next();
+    }
+    else {
+      return null;
+    }
+
   }
 
   protected Collection<Quote> getAllQuotes() {
