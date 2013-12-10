@@ -69,6 +69,22 @@
         <artifactId>guava</artifactId>
         <version>15.0</version>
       </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.9</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.siemens.pl.it</groupId>
+        <artifactId>PLMUtilities</artifactId>
+        <version>1.20140202.0.19</version>
+      </dependency>
+      <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>2.3</version>
+      </dependency>
 
     </dependencies>
     <properties>

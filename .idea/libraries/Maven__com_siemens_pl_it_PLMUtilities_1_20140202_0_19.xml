@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.siemens.pl.it:PLMUtilities:1.20140202.0.19">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/siemens/pl/it/PLMUtilities/1.20140202.0.19/PLMUtilities-1.20140202.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/siemens/pl/it/PLMUtilities/1.20140202.0.19/PLMUtilities-1.20140202.0.19-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/siemens/pl/it/PLMUtilities/1.20140202.0.19/PLMUtilities-1.20140202.0.19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

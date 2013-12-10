@@ -31,7 +31,7 @@ public class JacksonObjectMapper implements ContextResolver<ObjectMapper> {
 
     private static ObjectMapper createDefaultMapper() {
       ObjectMapper result = new ObjectMapper();
-      result.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm a z"));
+      result.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ"));
       result.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
 
       return result;
