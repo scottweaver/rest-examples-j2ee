@@ -5,6 +5,7 @@ import org.codehaus.jackson.map.SerializationConfig;
 
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
+import java.text.SimpleDateFormat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,6 +31,7 @@ public class JacksonObjectMapper implements ContextResolver<ObjectMapper> {
 
     private static ObjectMapper createDefaultMapper() {
       ObjectMapper result = new ObjectMapper();
+      result.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm a z"));
       result.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
 
       return result;
