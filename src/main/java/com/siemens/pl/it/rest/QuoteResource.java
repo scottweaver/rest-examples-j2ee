@@ -9,15 +9,12 @@ import com.google.common.collect.Collections2;
 import com.siemens.pl.it.rest.models.Quote;
 import com.siemens.pl.it.rest.models.QuoteItem;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
+import javax.ws.rs.core.Response;
+import java.util.*;
 
 
 @Path("quotes")
@@ -45,7 +42,10 @@ public class QuoteResource {
       return quotesFound.iterator().next();
     }
     else {
-      return null;
+      // Use 400 if it is the user's fault, 500 if it is yours.
+      throw new WebApplicationException(Response.status(Response.Status.NOT_FOUND)
+              .entity("Quote id/rev not found")
+              .type(MediaType.APPLICATION_JSON_TYPE).build());
     }
 
   }
