@@ -32,6 +32,37 @@
               </webApp>
             </configuration>
           </plugin>
+          <!-- Generate JAXB schemas -->
+          <!-- Plugin Home: http://mojo.codehaus.org/jaxb2-maven-plugin -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jaxb2-maven-plugin</artifactId>
+            <version>1.5</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>schemagen</goal>
+                </goals>
+                <phase>generate-resources</phase>
+                <configuration>
+                  <transformSchemas>
+                    <transformSchema>
+                      <uri>http://models.rest.it.pl.siemens.com/quotes</uri>
+                      <!--Can't use a custom prefix see: http://jira.codehaus.org/browse/MJAXB-80 -->
+                      <!--<toPrefix>quotes</toPrefix>-->
+                      <toFile>quotes.xsd</toFile>
+                    </transformSchema>
+                  </transformSchemas>
+                  <includes>
+                    <include>com/siemens/pl/it/rest/models/*.java</include>
+                  </includes>
+                  <outputDirectory>src/main/webapp/schemas</outputDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- /Generate JAXB schemas -->
+
         </plugins>
     </build>
 

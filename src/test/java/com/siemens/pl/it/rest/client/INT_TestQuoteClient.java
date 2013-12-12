@@ -13,7 +13,7 @@ import java.util.Collection;
  * User: Scott T Weaver
  * Time: 3:05 PM
  */
-public class TestQuoteClient {
+public class INT_TestQuoteClient {
 
   @Test
   public void test_retrieving_all_quotes() throws Exception{

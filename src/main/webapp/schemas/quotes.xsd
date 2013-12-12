@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://models.rest.it.pl.siemens.com/quotes" targetNamespace="http://models.rest.it.pl.siemens.com/quotes" version="1.0">
+
+  <xs:complexType name="quote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="quoteId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="quoteItems" nillable="true" type="tns:quoteItem"/>
+      <xs:element minOccurs="0" name="revision" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="quoteItem">
+    <xs:sequence>
+      <xs:element name="licenseListPrice" type="xs:double"/>
+      <xs:element minOccurs="0" name="mesExpirationDate" type="xs:dateTime"/>
+      <xs:element name="quantity" type="xs:int"/>
+      <xs:element minOccurs="0" name="sku" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,5 +1,6 @@
 package com.siemens.pl.it.rest.models;
 
+import javax.xml.bind.annotation.XmlType;
 import java.util.Collection;
 
 /**
@@ -7,6 +8,7 @@ import java.util.Collection;
  * User: Scott T Weaver
  * Time: 10:43 AM
  */
+@XmlType(namespace = "http://models.rest.it.pl.siemens.com/quotes")
 public class Quote {
 
   private String quoteId;
