@@ -62,7 +62,6 @@
             </executions>
           </plugin>
           <!-- /Generate JAXB schemas -->
-
         </plugins>
     </build>
 
