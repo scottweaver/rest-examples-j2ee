@@ -9,13 +9,14 @@ angular.module('myApp.controllers', []).
   .controller('MyCtrl2', [function() {
 
   }])
-  .controller('QuoteListCtrl', function ($scope) {
-      $scope.quotes = [
-        {'quoteId': '10000',
-         'revision': '1'},
-        {'quoteId': '20000',
-         'revision': '2'},
-        {'quoteId': '30000',
-         'revision': '3'}
-      ];
-    });
+  .controller('QuoteListCtrl',   function ($scope, $http) {
+            $http.get('/webapi/quotes').success(function(data) {
+              $scope.quotes = data;
+             });
+
+  });
+//  .controller('QuoteListCtrl', ['$scope',  'Quotes', function ($scope, Quotes) {
+//       var data = Quotes.query
+//       alert(data)
+//      $scope.quotes = data;
+//    }]);

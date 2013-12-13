@@ -1,0 +1,17 @@
+<p>Found {{quotes.length}} quote(s).</p>
+
+<table id="quotes">
+  <thead>
+  <tr>
+    <th>Quote ID</th>
+    <th>Revision</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="quote in quotes">
+      <td>{{quote.quoteId}}</td>
+      <td>{{quote.revision}}</td>
+    </tr>
+  </tbody>
+</table>

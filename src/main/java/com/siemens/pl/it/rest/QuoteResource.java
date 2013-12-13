@@ -25,14 +25,16 @@ public class QuoteResource {
   }
 
   @GET
-  @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+//  @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+  @Produces({MediaType.APPLICATION_JSON})
   public Collection<Quote> quotes() {
     return service.getAllQuotes();
   }
 
   @GET
   @Path("/{quoteId}/{revision}")
-  @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+//  @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+  @Produces({MediaType.APPLICATION_JSON})
   public Quote quote(@PathParam("quoteId") final String quoteId,
                      @PathParam("revision") final String revision) {
     return service.quote(quoteId, revision);
